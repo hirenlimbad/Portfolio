@@ -192,7 +192,22 @@ input {
 }
 
 
+ /* Default styles for the list group */
+ .list-group {
+  /* Add your list group styles here */
+}
 
+/* Media query to hide the list group on mobile screens */
+@media (max-width: 767px) {
+  .list-group {
+      display: none;
+  }
+
+  .tab-content{
+      margin-top: 20px;
+      margin-left: -115px;
+  }
+}
 
 
 
