@@ -1,0 +1,284 @@
+.welcome-message {
+  background-color: #f8f9fab4;
+  padding: 50px;
+  text-align: center;
+  margin: 50px 10px;
+  border-radius: 10px !important;
+}
+
+#rounded {
+  border-radius: 6.3rem !important;
+}
+
+
+.skills {
+  margin-top: -16px;
+}
+
+.sliding-text {
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+}
+
+.sliding-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.sliding-text span.current {
+  opacity: 1;
+}
+
+.slide-in {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-out {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+#about {
+  margin-top: 20%;
+}
+
+.divider {
+  margin-top: 300px;
+}
+
+.skill-text {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #120737;
+  margin: -12px 16px 30px 20px;
+}
+
+.progress-bar {
+  background-color: rgb(71, 101, 222) !important;
+  border-radius: 1px;
+  transition: width 0.5s ease-in-out;
+  border-radius: -16.7rem;
+}
+
+.list-group-item {
+  background-color: #ffffff !important;
+}
+
+
+.skills-list {
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.expert {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.intermediate {
+  color: #070bff;
+}
+
+.Beginner {
+  color: green;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 576px) {
+  .welcome-message {
+    /* Make the heading smaller on mobile devices */
+    font-size: 1.2rem;
+    margin: -20px;
+  }
+
+  .lead {
+    /* Make the lead paragraph larger on mobile devices */
+    font-size: 1.2rem;
+    margin: 5px -10px;
+  }
+
+  .welcome {
+    font-size: 30px;
+  }
+
+  .free {
+    display: none;
+  }
+}
+
+.col-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-body {
+  background-color: rgba(137, 188, 255, 0.721);
+  background-image: url('path/to/grain-pattern.png');
+  /* Replace with your own image */
+  background-size: cover;
+  background: radial-gradient(circle, #7b9ed38e 10%, transparent 10.5%);
+  background-size: 12px 12px;
+  /* Adjust the dot size */
+}
+
+.list-group-item.active {
+  color: black;
+}
+
+.active {
+  color: black !important;
+}
+
+textarea,
+input {
+  background-color: rgb(240, 240, 240) !important;
+  border-color: rgb(12, 8, 47) !important;
+  color: black !important;
+}
+
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s;
+  animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+/* Replace "random-container" with your actual container class */
+.random-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Replace "random-handles" with your actual handles class */
+.random-handles {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Replace "random-handle" with your actual handle class */
+.random-handle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-handle img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.random-handle p {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.random-handle img:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .random-container {
+    padding: 10px;
+  }
+
+  .random-handles {
+    flex-direction: column;
+  }
+
+  .random-handle {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+.site-title {
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+
+.nav-link {
+  padding: 0;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.active .nav-link {
+  color: #1d9bf0;
+  color: black;
+  scale: 1.2;
+  transition: .3s;
+}
+
+.nav-item+.nav-item {
+  margin-left: 1rem;
+}
