@@ -12,7 +12,7 @@
 
 @media (max-width: 576px) {
 
-  .welcome{
+  .welcome {
     font-size: 130% !important;
   }
 
@@ -20,37 +20,37 @@
     font-size: 20px !important;
   }
 
-  #dynamicSkillsContainer{
+  #dynamicSkillsContainer {
     display: none;
   }
 
 
   /* cantact me */
 
-  #contact .row{
+  #contact .row {
     display: inline !important;
     margin: 0px !important;
   }
 
-  #contact #name{
+  #contact #name {
     width: 210% !important;
   }
 
-  #contact #email{
+  #contact #email {
     margin-top: 10px !important;
     width: 210% !important;
   }
 
-  .form{
+  .form {
     padding: 0px !important;
   }
 
-  #message{
+  #message {
     margin-left: 10px !important;
     width: 94% !important;
   }
 
-  .Address{
+  .Address {
     display: none !important;
   }
 
