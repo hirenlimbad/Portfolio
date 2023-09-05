@@ -10,6 +10,52 @@
   border-radius: 6.3rem !important;
 }
 
+@media (max-width: 576px) {
+
+  .welcome{
+    font-size: 130% !important;
+  }
+
+  .introduction {
+    font-size: 20px !important;
+  }
+
+  #dynamicSkillsContainer{
+    display: none;
+  }
+
+
+  /* cantact me */
+
+  #contact .row{
+    display: inline !important;
+    margin: 0px !important;
+  }
+
+  #contact #name{
+    width: 210% !important;
+  }
+
+  #contact #email{
+    margin-top: 10px !important;
+    width: 210% !important;
+  }
+
+  .form{
+    padding: 0px !important;
+  }
+
+  #message{
+    margin-left: 10px !important;
+    width: 94% !important;
+  }
+
+  .Address{
+    display: none !important;
+  }
+
+}
+
 
 .skills {
   margin-top: -16px;
@@ -197,11 +243,11 @@ input {
 /* Media query to hide the list group on mobile screens */
 @media (max-width: 767px) {
   .list-group {
-      display: none !important;
+    display: none !important;
   }
 
-  .tab-content{
-      margin: 20px 0 0 -115px;
+  .tab-content {
+    margin: 20px 0 0 -50%;
   }
 }
 
