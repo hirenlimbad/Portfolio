@@ -542,7 +542,7 @@ b{
     text-align: center;
     margin: 0%;
     width: 100%;
-    margin-left: 10%;
+    margin-left: 0%;
   }
 
 
@@ -566,7 +566,6 @@ b{
 
   .left-side{
     width: 100% !important;
-    margin-left: 7%;
   }
 
   .work_exp_container{
@@ -597,5 +596,9 @@ b{
 
   #quote{
     font-size: 20px;
+  }
+
+  .profile .description{
+    margin: 0px;
   }
 }
