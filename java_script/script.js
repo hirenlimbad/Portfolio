@@ -1,43 +1,43 @@
-// Skills array
-const skills = ['Machine learning', 'Java Programming', 'Advance Python', 'Web-Developer', 'Android Developer', 'Canva Designer'];
+// // Skills array
+// const skills = ['Machine learning', 'Java Programming', 'Advance Python', 'Web-Developer', 'Android Developer', 'Canva Designer'];
 
-// Get the skills element and its container
-const skillsElementContainer = document.getElementById('dynamicSkillsContainer');
-const skillsElement = document.getElementById('dynamicSkills');
+// // Get the skills element and its container
+// const skillsElementContainer = document.getElementById('dynamicSkillsContainer');
+// const skillsElement = document.getElementById('dynamicSkills');
 
-// Variable to keep track of the current skill index
-let currentSkillIndex = 0;
+// // Variable to keep track of the current skill index
+// let currentSkillIndex = 0;
 
-// Function to change the skills dynamically
-function changeDynamicSkills() {
-  // Get the current skill from the skills array
-  const currentSkill = skills[currentSkillIndex];
+// // Function to change the skills dynamically
+// function changeDynamicSkills() {
+//   // Get the current skill from the skills array
+//   const currentSkill = skills[currentSkillIndex];
 
-  // Add fade-out class to apply fade-out animation
-  skillsElementContainer.classList.add('fade-out');
+//   // Add fade-out class to apply fade-out animation
+//   skillsElementContainer.classList.add('fade-out');
 
-  // Wait for the fade-out animation to complete
-  setTimeout(() => {
-    // Set the new skill
-    skillsElement.textContent = currentSkill;
+//   // Wait for the fade-out animation to complete
+//   setTimeout(() => {
+//     // Set the new skill
+//     skillsElement.textContent = currentSkill;
 
-    // Remove the fade-out class
-    skillsElementContainer.classList.remove('fade-out');
-  }, 400);
+//     // Remove the fade-out class
+//     skillsElementContainer.classList.remove('fade-out');
+//   }, 400);
 
-  // Increment the skill index
-  currentSkillIndex++;
+//   // Increment the skill index
+//   currentSkillIndex++;
 
-  // Reset the skill index if it exceeds the array length
-  if (currentSkillIndex >= skills.length) {
-    currentSkillIndex = 0;
-  }
-}
+//   // Reset the skill index if it exceeds the array length
+//   if (currentSkillIndex >= skills.length) {
+//     currentSkillIndex = 0;
+//   }
+// }
 
-// Call the function initially
-changeDynamicSkills();
+// // Call the function initially
+// changeDynamicSkills();
 
-setInterval(changeDynamicSkills, 4000);
+// setInterval(changeDynamicSkills, 4000);
 
 
 
