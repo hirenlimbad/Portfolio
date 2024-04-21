@@ -609,4 +609,8 @@ b{
   .profile .description{
     margin: 0px;
   }
+
+  #welcome-header{
+    display: none;
+  }
 }
