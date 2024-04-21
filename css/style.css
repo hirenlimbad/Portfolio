@@ -215,6 +215,10 @@ body{
   background-size: 12px 12px;
 }
 
+.card{
+  border: 1px solid #45467a !important;
+}
+
 .card:hover{
   border: 2px solid #1d9bf0;
 }
@@ -521,6 +525,10 @@ b{
 
 .name {
   width: 100% !important;
+}
+
+.form-control{
+  font-size: 1.5em !important;
 }
 
 /* responsive */
