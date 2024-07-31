@@ -1,7 +1,7 @@
 body{
  background-color: #041837 !important;
  color: #bfbdee !important;
- margin: 0 2%;
+ margin: 0 2% !important;
 }
 
 .welcome-message {
@@ -43,6 +43,10 @@ body{
 }
 
 @media (max-width: 576px) {
+
+ body{
+   margin: 0% !important;
+ }
 
   .welcome {
     font-size: 130% !important;
