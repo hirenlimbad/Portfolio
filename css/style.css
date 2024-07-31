@@ -1,6 +1,7 @@
 body{
  background-color: #041837 !important;
  color: #bfbdee !important;
+ margin: 0 2%;
 }
 
 .welcome-message {
@@ -520,6 +521,7 @@ b{
 .left-side .profile p{
   text-align: justify;
   font-size: 24px;
+  display: flex;
 }
 
 .small p{
