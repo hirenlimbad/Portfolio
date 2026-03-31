@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Update - Early Access</title>
+    <!-- Tailwind CSS for layout and styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for professional look, Permanent Marker for Graffiti -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrolling during the prank */
+        }
+
+        /* --- FAKE PORTFOLIO STYLES --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-1px, 0, 0); }
+            20%, 80% { transform: translate3d(2px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+            40%, 60% { transform: translate3d(4px, 0, 0); }
+        }
+
+        /* --- GRAFFITI PRANK STYLES --- */
+        .font-graffiti {
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .brick-bg {
+            background-color: #2b2b2b;
+            background-image: 
+                linear-gradient(335deg, rgba(255,255,255,0.05) 23px, transparent 23px),
+                linear-gradient(155deg, rgba(255,255,255,0.05) 23px, transparent 23px),
+                linear-gradient(335deg, rgba(255,255,255,0.05) 23px, transparent 23px),
+                linear-gradient(155deg, rgba(255,255,255,0.05) 23px, transparent 23px);
+            background-size: 58px 58px;
+            background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+        }
+
+        .graffiti-text {
+            color: #ff0055;
+            text-shadow: 
+                0 0 10px #ff0055, 
+                0 0 20px #ff0055, 
+                4px 4px 0px #000;
+            transform: rotate(-5deg);
+        }
+
+        .graffiti-sub {
+            color: #00ffcc;
+            text-shadow: 2px 2px 0px #000, 0 0 10px #00ffcc;
+            transform: rotate(2deg);
+        }
+
+        .spray-drip {
+            position: absolute;
+            background: #ff0055;
+            width: 4px;
+            height: 0;
+            border-radius: 50px;
+            animation: drip 2s forwards;
+            box-shadow: 0 0 5px #ff0055;
+        }
+
+        @keyframes drip {
+            to { height: 80px; opacity: 0; }
+        }
+
+        .splatter {
+            position: absolute;
+            background: #ff0055;
+            border-radius: 50%;
+            filter: blur(2px);
+            opacity: 0;
+            animation: splat 0.2s forwards;
+        }
+
+        @keyframes splat {
+            to { opacity: 0.8; transform: scale(1.5); }
+        }
+
+        /* Reveal Animation */
+        .prank-reveal {
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white h-screen w-full flex items-center justify-center relative selection:bg-zinc-800">
+
+    <!-- ========================================== -->
+    <!-- 1. FAKE PORTFOLIO LOGIN SCREEN             -->
+    <!-- ========================================== -->
+    <div id="portfolio-view" class="w-full max-w-md px-6 flex flex-col items-center justify-center transition-opacity duration-500 z-10">
+        
+        <!-- Fake Logo / Header -->
+        <div class="mb-10 text-center">
+            <div class="w-16 h-16 bg-white text-zinc-950 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 tracking-tighter">
+                UI
+            </div>
+            <h1 class="text-2xl font-semibold tracking-wide">Portfolio v3.0</h1>
+            <p class="text-zinc-400 text-sm mt-2">Closed Beta &bull; Early Access</p>
+        </div>
+
+        <!-- Login Card -->
+        <div class="glass-card rounded-2xl p-8 w-full shadow-2xl relative">
+            <h2 class="text-lg font-medium mb-1 text-center">Enter Access PIN</h2>
+            <p class="text-zinc-500 text-xs text-center mb-6">Invited friends only.</p>
+            
+            <div class="flex flex-col gap-4">
+                <div class="relative">
+                    <input 
+                        type="password" 
+                        id="pin-input" 
+                        maxlength="4" 
+                        inputmode="numeric"
+                        placeholder="••••"
+                        class="w-full bg-zinc-900/50 border border-zinc-700 rounded-lg px-4 py-4 text-center text-2xl tracking-[1em] focus:outline-none focus:border-white transition-colors placeholder:tracking-normal"
+                    >
+                </div>
+                
+                <p id="error-msg" class="text-red-400 text-xs text-center hidden">Incorrect PIN. Please try again.</p>
+
+                <button 
+                    id="unlock-btn"
+                    class="w-full bg-white text-zinc-950 font-semibold py-3.5 rounded-lg hover:bg-zinc-200 transition-colors mt-2 active:scale-95 duration-200"
+                >
+                    Unlock Portfolio
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-8 text-zinc-600 text-xs text-center">
+            &copy; 2026 Developer Portfolio. All rights reserved.
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. THE APRIL FOOLS GRAFFITI PRANK SCREEN   -->
+    <!-- ========================================== -->
+    <div id="prank-view" class="hidden absolute inset-0 w-full h-full brick-bg z-50 flex flex-col items-center justify-center p-4">
+        
+        <!-- Prank Content -->
+        <div class="text-center prank-reveal relative w-full max-w-2xl">
+            
+            <h1 class="font-graffiti text-6xl md:text-8xl lg:text-9xl uppercase graffiti-text mb-4 leading-none tracking-tight">
+                April<br>Fools!
+            </h1>
+            
+            <!-- Spray paint drips positioned under text -->
+            <div class="spray-drip" style="left: 30%; top: 60%; animation-delay: 0.5s;"></div>
+            <div class="spray-drip" style="left: 60%; top: 80%; animation-delay: 0.8s; height: 0; background: #00ffcc; box-shadow: 0 0 5px #00ffcc;"></div>
+            <div class="spray-drip" style="left: 80%; top: 50%; animation-delay: 1.2s;"></div>
+
+            <p class="font-graffiti text-2xl md:text-4xl graffiti-sub mt-8">
+                Gotcha! 😜
+            </p>
+            
+            <p class="font-sans text-white text-sm md:text-lg mt-10 bg-black/50 inline-block px-4 py-2 rounded font-bold uppercase tracking-widest border border-dashed border-zinc-500">
+                The real portfolio is still loading... in my brain.
+            </p>
+        </div>
+
+        <!-- Splatter Container -->
+        <div id="splatter-container" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. JAVASCRIPT LOGIC                        -->
+    <!-- ========================================== -->
+    <script>
+        const pinInput = document.getElementById('pin-input');
+        const unlockBtn = document.getElementById('unlock-btn');
+        const errorMsg = document.getElementById('error-msg');
+        const portfolioView = document.getElementById('portfolio-view');
+        const prankView = document.getElementById('prank-view');
+        const splatterContainer = document.getElementById('splatter-container');
+
+        const CORRECT_PIN = '0000';
+
+        function handleLogin() {
+            const pin = pinInput.value;
+            
+            if (pin === CORRECT_PIN) {
+                // Success - Trigger Prank
+                triggerPrank();
+            } else {
+                // Fail - Show error and shake
+                errorMsg.classList.remove('hidden');
+                pinInput.classList.add('border-red-500');
+                pinInput.classList.remove('border-zinc-700', 'focus:border-white');
+                
+                // Shake animation
+                pinInput.classList.remove('shake');
+                void pinInput.offsetWidth; // trigger reflow
+                pinInput.classList.add('shake');
+                
+                // Clear input after a short delay
+                setTimeout(() => {
+                    pinInput.value = '';
+                }, 400);
+            }
+        }
+
+        function triggerPrank() {
+            // Hide portfolio slowly
+            portfolioView.classList.add('opacity-0');
+            
+            setTimeout(() => {
+                portfolioView.classList.add('hidden');
+                
+                // Show prank view
+                prankView.classList.remove('hidden');
+                
+                // Vibrate device if supported (mobile friendly touch)
+                if (navigator.vibrate) {
+                    navigator.vibrate([100, 50, 100, 50, 200]);
+                }
+
+                // Add random spray splatters
+                createSplatters();
+            }, 300);
+        }
+
+        function createSplatters() {
+            const colors = ['#ff0055', '#00ffcc', '#ffff00', '#ff00ff'];
+            
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const splat = document.createElement('div');
+                    splat.classList.add('splatter');
+                    
+                    // Random size, position, and color
+                    const size = Math.random() * 40 + 10;
+                    const x = Math.random() * 100;
+                    const y = Math.random() * 100;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    splat.style.width = `${size}px`;
+                    splat.style.height = `${size}px`;
+                    splat.style.left = `${x}%`;
+                    splat.style.top = `${y}%`;
+                    splat.style.background = color;
+                    
+                    splatterContainer.appendChild(splat);
+                }, i * 50); // Stagger the appearance
+            }
+        }
+
+        // Event Listeners
+        unlockBtn.addEventListener('click', handleLogin);
+        
+        pinInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+
+        pinInput.addEventListener('input', () => {
+            // Reset error state when user types
+            errorMsg.classList.add('hidden');
+            pinInput.classList.remove('border-red-500', 'shake');
+            pinInput.classList.add('border-zinc-700');
+        });
+
+        // Focus input automatically on load (desktop mainly, mobile keyboards might require user tap)
+        window.addEventListener('load', () => {
+            pinInput.focus();
+        });
+    </script>
+</body>
+</html>
